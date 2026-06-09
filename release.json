@@ -1,19 +1,23 @@
 {
   "product": "Shaxing",
   "channel": "stable",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "releaseName": "鲨醒 V1.1 已发布",
   "releaseDate": "2026-06-09",
   "platform": "windows-x64",
   "packageType": "portable-zip",
-  "fileName": "Shaxing-Portable.zip",
-  "downloadUrl": "https://github.com/yyl1509452223-coder/shaxingnew/releases/latest/download/Shaxing-Portable.zip",
-  "sha256": "f37ddff7793abc1b5d1e444fe0f42e67db88647c2d22f621e465cb51349cd8f0",
-  "sizeBytes": 104774558,
+  "fileName": "Shaxing-Portable-v1.1-compact-reminder.zip",
+  "downloadUrl": "https://github.com/yyl1509452223-coder/shaxingnew/releases/download/v1.1.0/Shaxing-Portable-v1.1-compact-reminder.zip",
+  "sha256": "efac7cc00b173ae1cd20179f75bee2dcff478454c84615c6631a7bdbacf81843",
+  "sizeBytes": 104841485,
   "mandatory": false,
+  "summary": "这次更新让提醒更可靠、待办更贴心、更新更省心。",
   "notes": [
-    "细窗口提醒改成完整可操作提醒卡。",
-    "细窗口设置保留用户 ID、头像和主题切换。",
-    "修复打开完整提醒/设置后底部标签消失的问题。",
-    "备忘录工具栏和分类交互做了简化。"
+    "1. 🔔 喝水提醒升级为系统级通知，后台也能收到提醒。",
+    "2. 🧪 设置页新增喝水提醒测试按钮。",
+    "3. ⏰ 待办事项支持单独设置提醒时间。",
+    "4. 📣 待办到点后可通过系统通知弹出。",
+    "5. 🔄 新增自动检查更新与手动检查更新。",
+    "6. 📦 支持在线下载、校验并安装新版本。"
   ]
 }
