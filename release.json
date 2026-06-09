@@ -1,0 +1,19 @@
+{
+  "product": "Shaxing",
+  "channel": "stable",
+  "version": "1.0.0",
+  "releaseDate": "2026-06-09",
+  "platform": "windows-x64",
+  "packageType": "portable-zip",
+  "fileName": "Shaxing-Portable.zip",
+  "downloadUrl": "https://github.com/yyl1509452223-coder/shaxingnew/releases/latest/download/Shaxing-Portable.zip",
+  "sha256": "f37ddff7793abc1b5d1e444fe0f42e67db88647c2d22f621e465cb51349cd8f0",
+  "sizeBytes": 104774558,
+  "mandatory": false,
+  "notes": [
+    "细窗口提醒改成完整可操作提醒卡。",
+    "细窗口设置保留用户 ID、头像和主题切换。",
+    "修复打开完整提醒/设置后底部标签消失的问题。",
+    "备忘录工具栏和分类交互做了简化。"
+  ]
+}
