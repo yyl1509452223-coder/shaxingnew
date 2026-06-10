@@ -9,7 +9,7 @@
       content="鲨醒是一个 memo-first 的桌面备忘录工具。快速记录、轻量提醒、天气陪伴，让想法和待办不再散落。"
     />
     <link rel="stylesheet" href="./styles.css" onerror="this.onerror=null;this.href='https://yyl1509452223-coder.github.io/shaxingnew/styles.css';" />
-    <link rel="stylesheet" href="./release-pages.css?v=1.2.11-pixel-v5" />
+    <link rel="stylesheet" href="./release-pages.css?v=1.2.11-pixel-v6-app-like" />
     <style id="shaxing-release-pages-inline-fallback">
 /* Shaxing release pages v1.2.11-pixel-v5: real pixel handheld theme + compact history */
 /* 鲨醒版本页增量样式
@@ -1212,8 +1212,430 @@ body[data-theme="pixel"] .pomodoro-options button.is-active {
 }
 
 
+
+/* ================================
+   v6：像素掌机主题修正为“鲨醒应用内皮肤外观”
+   目标：不是通用黄底游戏网页，而是贴近应用截图里的浅色掌机 UI：
+   米白内容区、浅蓝侧栏/面板、棕色细描边、黄色按钮、底部绿色像素条。
+   ================================ */
+
+/* 皮肤卡片：保持和其它四张卡片一样的结构与比例 */
+.theme-card.pixel-handheld {
+  border-radius: var(--card-radius, 30px);
+  background: var(--card, rgba(255, 255, 255, 0.72));
+  color: var(--text, #223241);
+}
+
+.theme-card.pixel-handheld > span,
+.theme-card.pixel-handheld .pixel-card-screen {
+  display: block;
+  width: 100%;
+  height: 146px;
+  margin: 0 0 22px;
+  border: 0;
+  border-radius: 24px;
+  background:
+    linear-gradient(90deg, rgba(142, 96, 53, 0.14) 1px, transparent 1px) 0 0 / 16px 16px,
+    linear-gradient(180deg, rgba(142, 96, 53, 0.12) 1px, transparent 1px) 0 0 / 16px 16px,
+    linear-gradient(135deg, #fff6cf 0%, #f7d65a 42%, #d9f2ff 100%);
+  box-shadow: none;
+}
+
+body[data-theme="pixel"] {
+  --pixel-ink: #30251b;
+  --pixel-brown: #9b6534;
+  --pixel-brown-dark: #6f4724;
+  --pixel-paper: #fffdf1;
+  --pixel-cream: #fff7db;
+  --pixel-sky: #dff2ff;
+  --pixel-sky-2: #eefaff;
+  --pixel-yellow: #f7d653;
+  --pixel-yellow-soft: #fff1a8;
+  --pixel-green: #8fbe64;
+  --pixel-mint: #bdf0e8;
+
+  --bg: #eef8fb;
+  --text: var(--pixel-ink);
+  --muted: #755f48;
+  --panel: var(--pixel-sky);
+  --panel-strong: var(--pixel-paper);
+  --card: var(--pixel-paper);
+  --border: var(--pixel-brown);
+  --accent: var(--pixel-yellow);
+  --accent-strong: var(--pixel-brown-dark);
+  --shadow: 0 18px 34px rgba(87, 62, 35, 0.13);
+  --soft-shadow: 0 10px 24px rgba(87, 62, 35, 0.10);
+
+  color-scheme: light;
+  font-family: Inter, MiSans, "Microsoft YaHei", "PingFang SC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:
+    linear-gradient(180deg, #f8fcff 0%, #f3fbff 34%, #e7f5f3 34%, #e7f5f3 100%) !important;
+}
+
+/* 轻微纸张纹理，不再使用满屏游戏网格 */
+body[data-theme="pixel"]::before {
+  background:
+    radial-gradient(circle at 18% 10%, rgba(223, 242, 255, 0.9), transparent 34%),
+    radial-gradient(circle at 86% 24%, rgba(255, 241, 168, 0.42), transparent 30%),
+    linear-gradient(180deg, rgba(255,255,255,.46), rgba(255,255,255,0));
+  opacity: 1;
+}
+
+/* 应用底部绿色像素条 */
+body[data-theme="pixel"]::after {
+  content: "";
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 18px;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.18) 0 50%, transparent 50% 100%) 0 0 / 28px 100%,
+    linear-gradient(90deg, #8fbe64, #77ad58);
+  border-top: 2px solid var(--pixel-brown);
+}
+
+/* 顶部导航改成应用里的米白小标题栏，不要厚黑掌机框 */
+body[data-theme="pixel"] .site-header {
+  height: 56px;
+  border: 2px solid var(--pixel-brown);
+  border-radius: 14px;
+  background: rgba(255, 253, 241, 0.96);
+  box-shadow: 0 12px 30px rgba(86, 62, 36, 0.10);
+  backdrop-filter: blur(10px);
+}
+
+body[data-theme="pixel"] .site-header.is-scrolled {
+  background: rgba(255, 253, 241, 0.98);
+  border-color: var(--pixel-brown);
+  box-shadow: 0 14px 30px rgba(86, 62, 36, 0.14);
+}
+
+body[data-theme="pixel"] .brand,
+body[data-theme="pixel"] .site-nav,
+body[data-theme="pixel"] .nav-download {
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--pixel-ink);
+  font-weight: 800;
+}
+
+body[data-theme="pixel"] .brand-mark {
+  width: 31px;
+  height: 31px;
+  border: 2px solid var(--pixel-brown);
+  border-radius: 8px;
+  background: linear-gradient(180deg, #e7fbff, #b9edf6);
+  color: var(--pixel-ink);
+  box-shadow: 2px 2px 0 rgba(111, 71, 36, 0.23);
+}
+
+body[data-theme="pixel"] .site-nav a {
+  color: #6f604f;
+}
+
+body[data-theme="pixel"] .site-nav a:hover,
+body[data-theme="pixel"] .site-nav a[aria-current="page"] {
+  color: var(--pixel-brown-dark);
+}
+
+/* 主要区域整体靠近应用截图：浅蓝环境 + 米白内容卡 */
+body[data-theme="pixel"] .hero {
+  background:
+    radial-gradient(circle at 74% 10%, rgba(247, 214, 83, 0.18), transparent 28%),
+    linear-gradient(180deg, #f8fcff 0%, #f1fbff 66%, #e7f5f3 100%) !important;
+}
+
+body[data-theme="pixel"] .section,
+body[data-theme="pixel"] .download-section,
+body[data-theme="pixel"] .release-page {
+  position: relative;
+  z-index: 2;
+}
+
+body[data-theme="pixel"] .eyebrow,
+body[data-theme="pixel"] .section-kicker,
+body[data-theme="pixel"] .pomodoro-badge,
+body[data-theme="pixel"] .version-badge,
+body[data-theme="pixel"] .release-number {
+  color: var(--pixel-brown-dark);
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
+body[data-theme="pixel"] .hero-title,
+body[data-theme="pixel"] .hero-line,
+body[data-theme="pixel"] .section h2,
+body[data-theme="pixel"] .download-section h2,
+body[data-theme="pixel"] .release-hero h1,
+body[data-theme="pixel"] .version-card h2,
+body[data-theme="pixel"] .release-card h2 {
+  color: var(--pixel-ink);
+  text-shadow: none;
+  letter-spacing: -0.045em;
+}
+
+/* 统一卡片：棕色细边框 + 轻阴影，接近软件皮肤 */
+body[data-theme="pixel"] .product-stage,
+body[data-theme="pixel"] .memo-workspace,
+body[data-theme="pixel"] .support-item,
+body[data-theme="pixel"] .window,
+body[data-theme="pixel"] .companion-visual,
+body[data-theme="pixel"] .dock-memo,
+body[data-theme="pixel"] .download-inner,
+body[data-theme="pixel"] .release-hero,
+body[data-theme="pixel"] .release-card,
+body[data-theme="pixel"] .version-card,
+body[data-theme="pixel"] .release-panel div,
+body[data-theme="pixel"] .pomodoro-card,
+body[data-theme="pixel"] .pomodoro-notes article {
+  border: 2px solid var(--pixel-brown);
+  border-radius: 12px;
+  background: var(--pixel-paper);
+  box-shadow: var(--soft-shadow);
+  backdrop-filter: none;
+}
+
+/* 大块容器略带浅蓝，像应用主背景 */
+body[data-theme="pixel"] .memo-workspace,
+body[data-theme="pixel"] .pomodoro-card,
+body[data-theme="pixel"] .download-inner,
+body[data-theme="pixel"] .release-hero,
+body[data-theme="pixel"] .release-card,
+body[data-theme="pixel"] .version-card {
+  background:
+    linear-gradient(180deg, rgba(255, 253, 241, 0.94), rgba(255, 253, 241, 0.94)),
+    var(--pixel-paper);
+}
+
+body[data-theme="pixel"] .product-stage {
+  padding: 10px;
+  background: linear-gradient(180deg, #eefaff, #dff2ff);
+}
+
+body[data-theme="pixel"] .product-stage img {
+  border: 2px solid var(--pixel-brown);
+  border-radius: 10px;
+  box-shadow: none;
+  image-rendering: auto;
+}
+
+/* 输入框、标签和列表项 */
+body[data-theme="pixel"] .quick-input span,
+body[data-theme="pixel"] .todo-pill,
+body[data-theme="pixel"] .recent-memos,
+body[data-theme="pixel"] .window-input,
+body[data-theme="pixel"] .window-list span,
+body[data-theme="pixel"] .slim-input,
+body[data-theme="pixel"] .slim-window span,
+body[data-theme="pixel"] .pomodoro-options button,
+body[data-theme="pixel"] .pomodoro-task,
+body[data-theme="pixel"] .release-link-row a {
+  border: 2px solid var(--pixel-brown);
+  border-radius: 8px;
+  background: #fffdf1;
+  color: var(--pixel-ink);
+  box-shadow: none;
+}
+
+body[data-theme="pixel"] .todo-pill:first-child,
+body[data-theme="pixel"] .pomodoro-options button.is-active {
+  background: var(--pixel-yellow);
+}
+
+/* 按钮要像应用里的黄色按钮，不是霓虹游戏按钮 */
+body[data-theme="pixel"] .button,
+body[data-theme="pixel"] .nav-download,
+body[data-theme="pixel"] .quick-input button,
+body[data-theme="pixel"] .slim-window button {
+  border: 2px solid var(--pixel-brown);
+  border-radius: 8px;
+  background: var(--pixel-yellow);
+  color: var(--pixel-ink);
+  box-shadow: 3px 3px 0 rgba(111, 71, 36, 0.28);
+  text-shadow: none;
+  transform: none;
+}
+
+body[data-theme="pixel"] .button.primary {
+  background: var(--pixel-yellow);
+  color: var(--pixel-ink);
+  box-shadow: 3px 3px 0 rgba(111, 71, 36, 0.32);
+}
+
+body[data-theme="pixel"] .button.secondary,
+body[data-theme="pixel"] .nav-download {
+  background: #fffdf1;
+}
+
+body[data-theme="pixel"] .button:hover,
+body[data-theme="pixel"] .nav-download:hover,
+body[data-theme="pixel"] .quick-input button:hover,
+body[data-theme="pixel"] .slim-window button:hover,
+body[data-theme="pixel"] .todo-pill:hover,
+body[data-theme="pixel"] .support-item:hover,
+body[data-theme="pixel"] .theme-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 4px 4px 0 rgba(111, 71, 36, 0.24);
+}
+
+/* 主题卡片：五个卡片完全同规格 */
+body[data-theme="pixel"] .theme-section .theme-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 18px;
+}
+
+body[data-theme="pixel"] .theme-card {
+  border: 2px solid var(--pixel-brown);
+  border-radius: 12px;
+  background: var(--pixel-paper);
+  color: var(--pixel-ink);
+  box-shadow: 0 8px 22px rgba(87, 62, 35, 0.10);
+}
+
+body[data-theme="pixel"] .theme-card > span {
+  height: 146px;
+  border: 2px solid rgba(155, 101, 52, 0.72);
+  border-radius: 12px;
+  box-shadow: none;
+}
+
+body[data-theme="pixel"] .theme-card h3 {
+  color: var(--pixel-ink);
+  font-weight: 900;
+}
+
+body[data-theme="pixel"] .theme-card small {
+  color: #755f48;
+  font-weight: 700;
+}
+
+body[data-theme="pixel"] .theme-card.active {
+  border-color: #2c8fa2;
+  outline: 3px solid rgba(154, 226, 235, 0.72);
+  box-shadow: 0 10px 24px rgba(37, 143, 163, 0.14);
+}
+
+body[data-theme="pixel"] .theme-card.pixel-handheld {
+  background: var(--pixel-paper);
+}
+
+body[data-theme="pixel"] .theme-card.pixel-handheld > span {
+  background:
+    linear-gradient(90deg, rgba(155, 101, 52, 0.16) 1px, transparent 1px) 0 0 / 16px 16px,
+    linear-gradient(180deg, rgba(155, 101, 52, 0.13) 1px, transparent 1px) 0 0 / 16px 16px,
+    linear-gradient(135deg, #fff7c8 0%, #f7d653 44%, #dff2ff 100%);
+}
+
+/* 窗口和功能演示更接近应用：左侧浅蓝、内容米白 */
+body[data-theme="pixel"] .window-sidebar {
+  border-right: 2px solid var(--pixel-brown);
+  background: var(--pixel-sky);
+}
+
+body[data-theme="pixel"] .window-sidebar span,
+body[data-theme="pixel"] .window-top,
+body[data-theme="pixel"] .slim-dot,
+body[data-theme="pixel"] .weather-anim,
+body[data-theme="pixel"] .water-anim {
+  border: 2px solid var(--pixel-brown);
+  border-radius: 8px;
+  background: #fffdf1;
+}
+
+body[data-theme="pixel"] .support-item:nth-child(odd),
+body[data-theme="pixel"] .pomodoro-notes article:nth-child(odd),
+body[data-theme="pixel"] .release-panel div:nth-child(odd) {
+  background: #fff8cf;
+}
+
+body[data-theme="pixel"] .support-item:nth-child(even),
+body[data-theme="pixel"] .pomodoro-notes article:nth-child(even),
+body[data-theme="pixel"] .release-panel div:nth-child(even) {
+  background: var(--pixel-sky-2);
+}
+
+body[data-theme="pixel"] .companion-visual {
+  background:
+    linear-gradient(rgba(155, 101, 52, 0.11) 1px, transparent 1px) 0 0 / 40px 40px,
+    linear-gradient(90deg, rgba(155, 101, 52, 0.11) 1px, transparent 1px) 0 0 / 40px 40px,
+    #fffdf1;
+}
+
+body[data-theme="pixel"] .dock-memo {
+  background: var(--pixel-paper);
+}
+
+/* 番茄钟：像应用里的浅色卡片，而不是掌机硬件 */
+body[data-theme="pixel"] .pomodoro-ring {
+  border: 2px solid var(--pixel-brown);
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.22) 50%, transparent 50%) 0 0 / 100% 8px,
+    #dff7f2;
+  box-shadow: inset 0 0 0 5px rgba(255,255,255,0.44);
+}
+
+body[data-theme="pixel"] .pomodoro-ring::before {
+  background: conic-gradient(#f7d653 var(--pomodoro-progress, 0deg), rgba(155,101,52,0.16) 0);
+}
+
+body[data-theme="pixel"] .pomodoro-ring strong {
+  color: var(--pixel-ink);
+}
+
+/* 版本和下载页 */
+body[data-theme="pixel"] .release-panel {
+  gap: 14px;
+}
+
+body[data-theme="pixel"] .release-panel span,
+body[data-theme="pixel"] .release-card span,
+body[data-theme="pixel"] .version-card span {
+  color: var(--pixel-brown-dark);
+  font-weight: 900;
+}
+
+body[data-theme="pixel"] .version-card.major-version {
+  background:
+    linear-gradient(180deg, rgba(255, 253, 241, 0.92), rgba(255, 253, 241, 0.92)),
+    linear-gradient(135deg, #fff8cf, #e9f8ff);
+}
+
+body[data-theme="pixel"] .version-card.patch-version {
+  border-width: 2px;
+  border-radius: 10px;
+}
+
+/* 旧 v5 的大像素展示区彻底隐藏 */
+.pixel-theme-showcase {
+  display: none !important;
+}
+
+/* 适配：桌面 5 张同排，窄屏再换行 */
+@media (max-width: 1120px) {
+  body[data-theme="pixel"] .theme-section .theme-grid,
+  .theme-section .theme-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  body[data-theme="pixel"] .theme-section .theme-grid,
+  .theme-section .theme-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body[data-theme="pixel"] .site-header {
+    height: auto;
+    min-height: 56px;
+    border-radius: 12px;
+  }
+}
+
     </style>
-      <!-- v1.2.11-pixel-v4-fix -->
+      <!-- v1.2.11-pixel-v6-app-like -->
   </head>
   <body data-theme="glass">
     <header class="site-header" data-header>
@@ -1572,6 +1994,6 @@ body[data-theme="pixel"] .pomodoro-options button.is-active {
     </footer>
 
     <script src="./script.js" onerror="const s=document.createElement('script');s.src='https://yyl1509452223-coder.github.io/shaxingnew/script.js';document.body.appendChild(s);"></script>
-    <script src="./release-pages.js?v=1.2.11-pixel-v5"></script>
+    <script src="./release-pages.js?v=1.2.11-pixel-v6-app-like"></script>
   </body>
 </html>

@@ -134,52 +134,54 @@
 
 
 
-// v5：补充原站 script.js 没有登记的 pixel 主题。
-// 原 script.js 的 themeNames 只有 glass/cream/mint/cyber，点击 pixel 会被回退到 glass。
-// 这里在原脚本之后运行，重新把 body[data-theme]、按钮状态和本地记忆修正为 pixel。
+
+
+// v6：更稳的像素掌机主题切换。
+// 使用捕获阶段拦截 pixel 按钮，避免原站 script.js 因不认识 pixel 而先回退到 glass。
 (() => {
   const SITE_THEME_KEY = "shaxing-site:theme";
   const EXTENDED_THEME_KEY = "shaxing-site:theme-extended";
   const PIXEL = "pixel";
 
-  const themeButtons = () => Array.from(document.querySelectorAll("[data-theme-pick]"));
+  const buttons = () => Array.from(document.querySelectorAll("[data-theme-pick]"));
 
   const paintButtons = (theme) => {
-    themeButtons().forEach((button) => {
-      const active = button.dataset.themePick === theme;
-      button.classList.toggle("active", active);
-      button.setAttribute("aria-pressed", String(active));
+    buttons().forEach((button) => {
+      const isActive = button.dataset.themePick === theme;
+      button.classList.toggle("active", isActive);
+      button.setAttribute("aria-pressed", String(isActive));
     });
   };
 
-  const applyPixelTheme = () => {
-    document.body.dataset.theme = PIXEL;
+  const applyTheme = (theme) => {
+    document.body.dataset.theme = theme;
     try {
-      localStorage.setItem(SITE_THEME_KEY, PIXEL);
-      localStorage.setItem(EXTENDED_THEME_KEY, PIXEL);
-    } catch (_) {}
-    paintButtons(PIXEL);
-  };
-
-  const clearExtendedTheme = () => {
-    try {
-      localStorage.removeItem(EXTENDED_THEME_KEY);
-    } catch (_) {}
-  };
-
-  themeButtons().forEach((button) => {
-    button.addEventListener("click", () => {
-      if (button.dataset.themePick === PIXEL) {
-        window.requestAnimationFrame(applyPixelTheme);
+      localStorage.setItem(SITE_THEME_KEY, theme);
+      if (theme === PIXEL) {
+        localStorage.setItem(EXTENDED_THEME_KEY, PIXEL);
       } else {
-        clearExtendedTheme();
+        localStorage.removeItem(EXTENDED_THEME_KEY);
       }
-    });
+    } catch (_) {}
+    paintButtons(theme);
+  };
+
+  buttons().forEach((button) => {
+    button.addEventListener(
+      "click",
+      (event) => {
+        if (button.dataset.themePick !== PIXEL) return;
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        applyTheme(PIXEL);
+      },
+      true
+    );
   });
 
   try {
-    if (localStorage.getItem(EXTENDED_THEME_KEY) === PIXEL) {
-      window.requestAnimationFrame(applyPixelTheme);
+    if (localStorage.getItem(EXTENDED_THEME_KEY) === PIXEL || localStorage.getItem(SITE_THEME_KEY) === PIXEL) {
+      window.requestAnimationFrame(() => applyTheme(PIXEL));
     }
   } catch (_) {}
 })();
