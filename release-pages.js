@@ -131,3 +131,55 @@
 
   render();
 })();
+
+
+
+// v5：补充原站 script.js 没有登记的 pixel 主题。
+// 原 script.js 的 themeNames 只有 glass/cream/mint/cyber，点击 pixel 会被回退到 glass。
+// 这里在原脚本之后运行，重新把 body[data-theme]、按钮状态和本地记忆修正为 pixel。
+(() => {
+  const SITE_THEME_KEY = "shaxing-site:theme";
+  const EXTENDED_THEME_KEY = "shaxing-site:theme-extended";
+  const PIXEL = "pixel";
+
+  const themeButtons = () => Array.from(document.querySelectorAll("[data-theme-pick]"));
+
+  const paintButtons = (theme) => {
+    themeButtons().forEach((button) => {
+      const active = button.dataset.themePick === theme;
+      button.classList.toggle("active", active);
+      button.setAttribute("aria-pressed", String(active));
+    });
+  };
+
+  const applyPixelTheme = () => {
+    document.body.dataset.theme = PIXEL;
+    try {
+      localStorage.setItem(SITE_THEME_KEY, PIXEL);
+      localStorage.setItem(EXTENDED_THEME_KEY, PIXEL);
+    } catch (_) {}
+    paintButtons(PIXEL);
+  };
+
+  const clearExtendedTheme = () => {
+    try {
+      localStorage.removeItem(EXTENDED_THEME_KEY);
+    } catch (_) {}
+  };
+
+  themeButtons().forEach((button) => {
+    button.addEventListener("click", () => {
+      if (button.dataset.themePick === PIXEL) {
+        window.requestAnimationFrame(applyPixelTheme);
+      } else {
+        clearExtendedTheme();
+      }
+    });
+  });
+
+  try {
+    if (localStorage.getItem(EXTENDED_THEME_KEY) === PIXEL) {
+      window.requestAnimationFrame(applyPixelTheme);
+    }
+  } catch (_) {}
+})();

@@ -1,4 +1,4 @@
-/* Shaxing release pages v1.2.11-pixel-v4: pixel theme + compact history fixed */
+/* Shaxing release pages v1.2.11-pixel-v5: real pixel handheld theme + compact history */
 /* 鲨醒版本页增量样式
    说明：这个文件只补充 v1.2.11 的版本页、历史版本页和首页下载区新增组件。
    不替换原 styles.css，不影响原来的 reveal、主题切换、天气动画和产品功能展示。
@@ -823,5 +823,377 @@ body[data-theme="pixel"] .nav-download {
   .pixel-buttons span {
     width: 40px;
     height: 40px;
+  }
+}
+
+
+
+/* ================================
+   v5：像素掌机是“整站主题”，不是单独介绍区
+   ================================ */
+
+/* 不再展示额外的掌机介绍大卡片；点击主题卡片后由整页外观表达主题 */
+.pixel-theme-showcase {
+  display: none !important;
+}
+
+/* 5 个皮肤卡片保持同一排版：色块 + 标题 + 小字 */
+.theme-section .theme-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.theme-card.pixel-handheld {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(220, 234, 243, 0.82);
+  border-radius: 30px;
+  background: #fffaf1;
+  color: var(--text, #223241);
+  box-shadow: none;
+}
+
+.theme-card.pixel-handheld > span,
+.theme-card.pixel-handheld .pixel-card-screen {
+  display: block;
+  width: 100%;
+  height: 146px;
+  margin-bottom: 22px;
+  border: 0;
+  border-radius: 24px;
+  background:
+    linear-gradient(90deg, rgba(43, 33, 24, 0.13) 1px, transparent 1px) 0 0 / 14px 14px,
+    linear-gradient(180deg, rgba(43, 33, 24, 0.10) 1px, transparent 1px) 0 0 / 14px 14px,
+    radial-gradient(circle at 72% 28%, rgba(104, 212, 229, 0.78), transparent 22%),
+    linear-gradient(145deg, #fff1a6 0%, #ffb35d 58%, #9ddbe8 100%);
+  box-shadow: none;
+}
+
+.theme-card.pixel-handheld h3 {
+  margin: 0;
+  color: var(--text, #223241);
+}
+
+.theme-card.pixel-handheld small {
+  color: var(--muted, #6f8191);
+}
+
+/* 整体像素掌机主题变量 */
+body[data-theme="pixel"] {
+  --bg-a: #ffe7a6;
+  --bg-b: #ffc46f;
+  --bg-c: #fff4c8;
+  --bg: #fff1bb;
+  --white: #fff8dc;
+  --blue: #68d4e5;
+  --blue-strong: #238fa4;
+  --accent: #ffb24a;
+  --accent-strong: #8a4b22;
+  --button-text: #2b2118;
+  --text: #2b2118;
+  --muted: #765f48;
+  --border: #2b2118;
+  --card: #fff2c6;
+  --panel: #ffe8a3;
+  --panel-strong: #fff6d5;
+  --shadow: 10px 10px 0 rgba(43, 33, 24, 0.9);
+  --soft-shadow: 6px 6px 0 rgba(43, 33, 24, 0.9);
+  color-scheme: light;
+  background:
+    radial-gradient(circle at 16% 10%, rgba(255, 178, 74, 0.42), transparent 28%),
+    radial-gradient(circle at 84% 22%, rgba(104, 212, 229, 0.34), transparent 26%),
+    linear-gradient(180deg, #fff4c8 0%, #ffe0a0 48%, #f8d484 100%);
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", "Microsoft YaHei", monospace;
+}
+
+body[data-theme="pixel"]::before {
+  background:
+    linear-gradient(rgba(43, 33, 24, 0.055) 1px, transparent 1px) 0 0 / 22px 22px,
+    linear-gradient(90deg, rgba(43, 33, 24, 0.055) 1px, transparent 1px) 0 0 / 22px 22px,
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.52), transparent 38%);
+}
+
+body[data-theme="pixel"] .site-header {
+  height: 64px;
+  border: 4px solid #2b2118;
+  border-radius: 20px;
+  background: #ffcc68;
+  box-shadow: 6px 6px 0 #2b2118;
+  backdrop-filter: none;
+}
+
+body[data-theme="pixel"] .site-header.is-scrolled {
+  border-color: #2b2118;
+  background: #ffcc68;
+  box-shadow: 6px 6px 0 #2b2118;
+  backdrop-filter: none;
+}
+
+body[data-theme="pixel"] .brand-mark {
+  border: 3px solid #2b2118;
+  border-radius: 8px;
+  background: #9de7db;
+  color: #2b2118;
+  box-shadow: 3px 3px 0 #2b2118;
+  image-rendering: pixelated;
+}
+
+body[data-theme="pixel"] .brand,
+body[data-theme="pixel"] .site-nav,
+body[data-theme="pixel"] .nav-download,
+body[data-theme="pixel"] .button,
+body[data-theme="pixel"] .section-kicker,
+body[data-theme="pixel"] .eyebrow {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+body[data-theme="pixel"] .site-nav {
+  color: #5b4938;
+  font-weight: 900;
+}
+
+body[data-theme="pixel"] .site-nav a:hover {
+  color: #2b2118;
+}
+
+body[data-theme="pixel"] .nav-download,
+body[data-theme="pixel"] .button,
+body[data-theme="pixel"] .quick-input button,
+body[data-theme="pixel"] .slim-window button {
+  border: 3px solid #2b2118;
+  border-radius: 10px;
+  background: #9de7db;
+  color: #2b2118;
+  box-shadow: 4px 4px 0 #2b2118;
+  text-shadow: none;
+  transform: none;
+}
+
+body[data-theme="pixel"] .button.primary {
+  background: #ff6f91;
+  color: #2b2118;
+  box-shadow: 5px 5px 0 #2b2118;
+}
+
+body[data-theme="pixel"] .button.secondary {
+  background: #fff2c6;
+  color: #2b2118;
+}
+
+body[data-theme="pixel"] .button:hover,
+body[data-theme="pixel"] .nav-download:hover,
+body[data-theme="pixel"] .quick-input button:hover,
+body[data-theme="pixel"] .slim-window button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #2b2118;
+}
+
+body[data-theme="pixel"] .hero {
+  background:
+    linear-gradient(rgba(43, 33, 24, 0.055) 1px, transparent 1px) 0 0 / 24px 24px,
+    linear-gradient(90deg, rgba(43, 33, 24, 0.055) 1px, transparent 1px) 0 0 / 24px 24px,
+    linear-gradient(180deg, #fff4c8 0%, #ffe6a9 72%);
+}
+
+body[data-theme="pixel"] .hero-title,
+body[data-theme="pixel"] .hero-line,
+body[data-theme="pixel"] .section h2,
+body[data-theme="pixel"] .download-section h2,
+body[data-theme="pixel"] .release-hero h1 {
+  color: #2b2118;
+  letter-spacing: -0.04em;
+  text-shadow: 3px 3px 0 rgba(104, 212, 229, 0.42);
+}
+
+body[data-theme="pixel"] .product-stage,
+body[data-theme="pixel"] .memo-workspace,
+body[data-theme="pixel"] .support-item,
+body[data-theme="pixel"] .window,
+body[data-theme="pixel"] .companion-visual,
+body[data-theme="pixel"] .dock-memo,
+body[data-theme="pixel"] .download-section,
+body[data-theme="pixel"] .release-hero,
+body[data-theme="pixel"] .release-card,
+body[data-theme="pixel"] .version-card,
+body[data-theme="pixel"] .release-panel div,
+body[data-theme="pixel"] .pomodoro-card,
+body[data-theme="pixel"] .pomodoro-notes article {
+  border: 4px solid #2b2118;
+  border-radius: 18px;
+  background: #fff2c6;
+  box-shadow: 8px 8px 0 #2b2118;
+  backdrop-filter: none;
+}
+
+body[data-theme="pixel"] .product-stage {
+  padding: 12px;
+  background: #ffb85c;
+}
+
+body[data-theme="pixel"] .product-stage img {
+  border: 4px solid #2b2118;
+  border-radius: 12px;
+  image-rendering: auto;
+}
+
+body[data-theme="pixel"] .memo-workspace,
+body[data-theme="pixel"] .download-section {
+  background:
+    linear-gradient(rgba(43, 33, 24, 0.05) 1px, transparent 1px) 0 0 / 18px 18px,
+    linear-gradient(90deg, rgba(43, 33, 24, 0.05) 1px, transparent 1px) 0 0 / 18px 18px,
+    #fff2c6;
+}
+
+body[data-theme="pixel"] .quick-input span,
+body[data-theme="pixel"] .todo-pill,
+body[data-theme="pixel"] .recent-memos,
+body[data-theme="pixel"] .window-input,
+body[data-theme="pixel"] .window-list span,
+body[data-theme="pixel"] .slim-input,
+body[data-theme="pixel"] .slim-window span,
+body[data-theme="pixel"] .pomodoro-options button,
+body[data-theme="pixel"] .pomodoro-task,
+body[data-theme="pixel"] .release-link-row a {
+  border: 3px solid #2b2118;
+  border-radius: 10px;
+  background: #fff8dc;
+  color: #2b2118;
+  box-shadow: 4px 4px 0 rgba(43, 33, 24, 0.92);
+}
+
+body[data-theme="pixel"] .todo-pill:hover,
+body[data-theme="pixel"] .support-item:hover,
+body[data-theme="pixel"] .theme-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 10px 10px 0 #2b2118;
+}
+
+body[data-theme="pixel"] .theme-card {
+  border: 4px solid #2b2118;
+  border-radius: 18px;
+  background: #fff2c6;
+  box-shadow: 6px 6px 0 #2b2118;
+}
+
+body[data-theme="pixel"] .theme-card span {
+  border: 3px solid #2b2118;
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.24);
+}
+
+body[data-theme="pixel"] .theme-card.active {
+  border-color: #2b2118;
+  outline: 4px solid #68d4e5;
+  box-shadow: 8px 8px 0 #2b2118;
+}
+
+body[data-theme="pixel"] .theme-card h3,
+body[data-theme="pixel"] .support-item h3,
+body[data-theme="pixel"] .todo-pill strong,
+body[data-theme="pixel"] .dock-memo strong {
+  color: #2b2118;
+  font-weight: 900;
+}
+
+body[data-theme="pixel"] .theme-card small,
+body[data-theme="pixel"] .support-item p,
+body[data-theme="pixel"] .section-copy p:not(.section-kicker),
+body[data-theme="pixel"] .download-section p,
+body[data-theme="pixel"] .hero-copy {
+  color: #6f573e;
+  font-weight: 700;
+}
+
+body[data-theme="pixel"] .theme-card.pixel-handheld {
+  background: #ffe0a0;
+}
+
+body[data-theme="pixel"] .theme-card.pixel-handheld > span {
+  background:
+    linear-gradient(90deg, rgba(43, 33, 24, 0.16) 1px, transparent 1px) 0 0 / 14px 14px,
+    linear-gradient(180deg, rgba(43, 33, 24, 0.12) 1px, transparent 1px) 0 0 / 14px 14px,
+    linear-gradient(145deg, #fff1a6 0%, #ffb35d 58%, #9de7db 100%);
+}
+
+body[data-theme="pixel"] .window-sidebar {
+  border-right: 4px solid #2b2118;
+  background: #ffd079;
+}
+
+body[data-theme="pixel"] .window-sidebar span,
+body[data-theme="pixel"] .window-top,
+body[data-theme="pixel"] .slim-dot,
+body[data-theme="pixel"] .weather-anim,
+body[data-theme="pixel"] .water-anim {
+  border: 3px solid #2b2118;
+  border-radius: 10px;
+  background: #9de7db;
+}
+
+body[data-theme="pixel"] .companion-visual {
+  background:
+    linear-gradient(rgba(43, 33, 24, 0.10) 2px, transparent 2px) 0 0 / 40px 40px,
+    linear-gradient(90deg, rgba(43, 33, 24, 0.10) 2px, transparent 2px) 0 0 / 40px 40px,
+    #fff8dc;
+}
+
+body[data-theme="pixel"] .download-section {
+  border-radius: 18px;
+}
+
+body[data-theme="pixel"] .release-panel {
+  gap: 16px;
+}
+
+body[data-theme="pixel"] .release-panel span,
+body[data-theme="pixel"] .release-card span,
+body[data-theme="pixel"] .version-card span {
+  color: #8a4b22;
+  font-weight: 900;
+}
+
+/* 番茄钟也变成掌机屏幕风 */
+body[data-theme="pixel"] .pomodoro-ring {
+  border-color: rgba(43, 33, 24, 0.18);
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.18) 50%, transparent 50%) 0 0 / 100% 8px,
+    #9de7db;
+  box-shadow:
+    inset 0 0 0 5px rgba(43, 33, 24, 0.10),
+    5px 5px 0 #2b2118;
+}
+
+body[data-theme="pixel"] .pomodoro-ring::before {
+  background: conic-gradient(#ff6f91 var(--pomodoro-progress, 0deg), rgba(43, 33, 24, 0.14) 0);
+}
+
+body[data-theme="pixel"] .pomodoro-options button.is-active {
+  background: #ffcc68;
+  color: #2b2118;
+}
+
+@media (max-width: 1060px) {
+  .theme-section .theme-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .theme-section .theme-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body[data-theme="pixel"] .site-header {
+    border-width: 3px;
+    box-shadow: 4px 4px 0 #2b2118;
+  }
+}
+
+@media (max-width: 520px) {
+  body[data-theme="pixel"] .hero-title,
+  body[data-theme="pixel"] .hero-line,
+  body[data-theme="pixel"] .section h2,
+  body[data-theme="pixel"] .download-section h2 {
+    text-shadow: 2px 2px 0 rgba(104, 212, 229, 0.42);
   }
 }
