@@ -39,7 +39,7 @@
   const timeNode = demo.querySelector("[data-pomodoro-time]");
   const statusNode = demo.querySelector("[data-pomodoro-status]");
   const ringNode = demo.querySelector("[data-pomodoro-ring]");
-  const cardNode = demo.querySelector(".pomodoro-card");
+  const cardNode = demo.querySelector(".pomodoro-card") || demo.querySelector("[data-pomodoro-card]") || demo.querySelector(".sx14-pomodoro-card");
   const startButton = demo.querySelector("[data-pomodoro-start]");
   const pauseButton = demo.querySelector("[data-pomodoro-pause]");
   const resetButton = demo.querySelector("[data-pomodoro-reset]");
@@ -57,10 +57,10 @@
   };
 
   const render = () => {
-    if (!timeNode || !ringNode) return;
+    if (!timeNode) return;
     timeNode.textContent = formatTime(remainingSeconds);
     const done = totalSeconds ? (totalSeconds - remainingSeconds) / totalSeconds : 0;
-    ringNode.style.setProperty("--progress", `${Math.min(360, Math.max(0, done * 360))}deg`);
+    if (ringNode) ringNode.style.setProperty("--progress", `${Math.min(360, Math.max(0, done * 360))}deg`);
   };
 
   const setStatus = (text, state) => {
