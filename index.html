@@ -9,7 +9,7 @@
       content="鲨醒是一个 memo-first 的桌面备忘录工具。快速记录、轻量提醒、天气陪伴，让想法和待办不再散落。"
     />
     <link rel="stylesheet" href="./styles.css" onerror="this.onerror=null;this.href='https://yyl1509452223-coder.github.io/shaxingnew/styles.css';" />
-    <link rel="stylesheet" href="./release-pages.css?v=1.4.0-v140-final-v140-final" />
+    <link rel="stylesheet" href="./release-pages.css?v=1.4.0-cyber-theme-fix" />
     <style id="shaxing-release-pages-inline-fallback">
 /* Shaxing release pages v1.2.11-default-glass-v7: real pixel handheld theme + compact history */
 /* 鲨醒版本页增量样式
@@ -1773,6 +1773,70 @@ body[data-theme="pixel"] .product-stage img {
   .hero-version-pill b { width: 100%; justify-content: center; }
 }
 
+
+
+/* v1.4.0 cyber theme section cleanup */
+.sx14-theme-section .section-copy > p:not(.section-kicker) {
+  display: none !important;
+}
+.sx14-theme-section .section-copy {
+  width: min(980px, 100%);
+  max-width: 980px;
+}
+.sx14-theme-section h2 {
+  max-width: 980px;
+  margin-inline: auto;
+  text-wrap: balance;
+}
+body[data-theme="cyber"] .sx14-theme-section {
+  position: relative;
+  isolation: isolate;
+}
+body[data-theme="cyber"] .sx14-theme-section h2 {
+  font-size: clamp(38px, 4.9vw, 60px);
+  line-height: 1.06;
+  letter-spacing: -0.055em;
+  color: #f5fbff;
+  text-shadow: 0 0 18px rgba(0, 229, 255, 0.20), 0 0 42px rgba(255, 42, 170, 0.10);
+}
+body[data-theme="cyber"] .sx14-theme-grid {
+  max-width: 1120px;
+  gap: 18px;
+}
+body[data-theme="cyber"] .sx14-theme-card {
+  border-color: rgba(0, 229, 255, 0.30);
+  background:
+    radial-gradient(circle at 78% 12%, rgba(255, 42, 170, 0.14), transparent 34%),
+    linear-gradient(180deg, rgba(24, 31, 58, 0.94), rgba(9, 13, 30, 0.90));
+  box-shadow:
+    0 22px 58px rgba(0, 0, 0, 0.30),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+body[data-theme="cyber"] .sx14-theme-card:hover,
+body[data-theme="cyber"] .sx14-theme-card.active {
+  border-color: rgba(245, 230, 66, 0.84);
+  box-shadow:
+    0 0 0 1px rgba(245, 230, 66, 0.22),
+    0 28px 76px rgba(0, 229, 255, 0.16),
+    0 0 42px rgba(255, 42, 170, 0.14),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+body[data-theme="cyber"] .sx14-theme-card h3 {
+  color: #f5fbff;
+  text-shadow: none;
+}
+body[data-theme="cyber"] .sx14-theme-card small {
+  color: #b9c9d8;
+}
+body[data-theme="cyber"] .sx14-swatch {
+  border-color: rgba(0, 229, 255, 0.28);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+body[data-theme="cyber"] .sx14-cyber {
+  border-color: rgba(245, 230, 66, 0.36);
+  box-shadow: inset 0 0 0 2px rgba(0, 229, 255, 0.30), 0 0 24px rgba(255, 42, 170, 0.16);
+}
+
 </style>
       <!-- v1.2.11-pixel-v6-app-like -->
   </head>
@@ -1974,7 +2038,7 @@ body[data-theme="pixel"] .product-stage img {
         <div class="section-copy reveal">
           <p class="section-kicker">Themes</p>
           <h2>当前软件内的 4 套主题皮肤</h2>
-          <p>官网展示改成和 v1.4.0 软件内一致：默认轻盈毛玻璃、暖白奶油、薄荷清新、赛博朋克；去掉旧的像素掌机展示。</p>
+          
         </div>
 
         <div class="sx14-theme-grid">
