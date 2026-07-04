@@ -1624,8 +1624,8 @@ body[data-theme="pixel"] .version-card.patch-version {
 
 /* v1.4.0 premium homepage hero: cleaner Apple/iPhone-like product presentation */
 .product-stage {
-  width: min(1180px, 94vw);
-  margin-top: 58px;
+  width: min(1320px, 96vw);
+  margin-top: 48px;
   padding: 0;
   border: 0;
   border-radius: 40px;
