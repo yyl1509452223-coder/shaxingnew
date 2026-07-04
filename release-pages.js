@@ -136,16 +136,13 @@
 
 
 
-// v7：默认主题修复。
-// 目标：主页首次打开默认保持“默认轻盈毛玻璃”；同时保留点击“像素掌机”后即时切换整站主题。
-// 说明：v6 曾经把 pixel 记入 localStorage，导致你的浏览器刷新后仍默认进像素主题。
-// 这里会自动清理一次旧的 pixel 记忆；之后用户再次手动点击像素掌机，仍然可以正常切换。
+
+// v1.4.0：像素掌机主题已下线，永久清理旧缓存，刷新不再回到 pixel。
 (() => {
   const SITE_THEME_KEY = "shaxing-site:theme";
   const EXTENDED_THEME_KEY = "shaxing-site:theme-extended";
-  const RESET_FLAG = "shaxing-site:default-glass-reset-v7";
+  const ALLOWED = new Set(["glass", "cream", "mint", "cyber"]);
   const DEFAULT_THEME = "glass";
-  const PIXEL = "pixel";
 
   const buttons = () => Array.from(document.querySelectorAll("[data-theme-pick]"));
 
@@ -157,63 +154,45 @@
     });
   };
 
-  const applyTheme = (theme, options = {}) => {
-    document.body.dataset.theme = theme;
+  const applySafeTheme = (theme, persist = true) => {
+    const nextTheme = ALLOWED.has(theme) ? theme : DEFAULT_THEME;
+    document.body.dataset.theme = nextTheme;
+    paintButtons(nextTheme);
     try {
-      if (options.persist !== false) {
-        localStorage.setItem(SITE_THEME_KEY, theme);
-        if (theme === PIXEL) {
-          localStorage.setItem(EXTENDED_THEME_KEY, PIXEL);
-        } else {
-          localStorage.removeItem(EXTENDED_THEME_KEY);
-        }
-      }
+      localStorage.removeItem(EXTENDED_THEME_KEY);
+      localStorage.removeItem("shaxing-site:default-glass-reset-v7");
+      if (persist) localStorage.setItem(SITE_THEME_KEY, nextTheme);
     } catch (_) {}
-    paintButtons(theme);
   };
 
-  // 只执行一次：把 v6 留下来的 pixel 默认记忆清掉，让官网回到默认轻盈毛玻璃。
   try {
-    const shouldResetOldPixel =
-      !localStorage.getItem(RESET_FLAG) &&
-      (localStorage.getItem(EXTENDED_THEME_KEY) === PIXEL ||
-        localStorage.getItem(SITE_THEME_KEY) === PIXEL);
-
-    if (shouldResetOldPixel) {
+    const saved = localStorage.getItem(SITE_THEME_KEY);
+    if (!ALLOWED.has(saved)) {
       localStorage.setItem(SITE_THEME_KEY, DEFAULT_THEME);
-      localStorage.removeItem(EXTENDED_THEME_KEY);
-      localStorage.setItem(RESET_FLAG, "1");
-      window.requestAnimationFrame(() => applyTheme(DEFAULT_THEME, { persist: false }));
     }
+    localStorage.removeItem(EXTENDED_THEME_KEY);
   } catch (_) {}
 
   buttons().forEach((button) => {
     button.addEventListener(
       "click",
       (event) => {
-        const pickedTheme = button.dataset.themePick;
-        if (pickedTheme !== PIXEL) return;
-
-        event.preventDefault();
-        event.stopImmediatePropagation();
-        applyTheme(PIXEL);
+        const picked = button.dataset.themePick;
+        if (!ALLOWED.has(picked)) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          applySafeTheme(DEFAULT_THEME);
+          return;
+        }
+        window.requestAnimationFrame(() => applySafeTheme(picked));
       },
       true
     );
   });
 
-  // 非首次清理场景：如果用户后来主动选择了像素掌机，则刷新后继续保持；
-  // 如果没有保存任何主题，则明确使用 glass。
-  try {
-    const savedTheme = localStorage.getItem(SITE_THEME_KEY) || DEFAULT_THEME;
-    const savedExtendedTheme = localStorage.getItem(EXTENDED_THEME_KEY);
-
-    if (savedTheme === PIXEL || savedExtendedTheme === PIXEL) {
-      window.requestAnimationFrame(() => applyTheme(PIXEL, { persist: false }));
-    } else if (!localStorage.getItem(SITE_THEME_KEY)) {
-      window.requestAnimationFrame(() => applyTheme(DEFAULT_THEME, { persist: false }));
-    }
-  } catch (_) {
-    window.requestAnimationFrame(() => applyTheme(DEFAULT_THEME, { persist: false }));
-  }
+  window.requestAnimationFrame(() => {
+    let saved = DEFAULT_THEME;
+    try { saved = localStorage.getItem(SITE_THEME_KEY) || DEFAULT_THEME; } catch (_) {}
+    applySafeTheme(saved, false);
+  });
 })();
