@@ -9,6 +9,27 @@ const themeNames = {
   cyber: "赛博朋克 2077",
 };
 
+const SITE_THEME_KEY = "shaxing-site:theme";
+const RETIRED_THEME_KEYS = [
+  "shaxing-site:theme-extended",
+  "shaxing-site:default-glass-reset-v7",
+];
+
+const normalizeSavedTheme = () => {
+  try {
+    const savedTheme = localStorage.getItem(SITE_THEME_KEY);
+    const hasRetiredPixel =
+      savedTheme === "pixel" ||
+      RETIRED_THEME_KEYS.some((key) => localStorage.getItem(key) === "pixel");
+
+    RETIRED_THEME_KEYS.forEach((key) => localStorage.removeItem(key));
+
+    if (hasRetiredPixel || (savedTheme && !themeNames[savedTheme])) {
+      localStorage.setItem(SITE_THEME_KEY, "glass");
+    }
+  } catch (_) {}
+};
+
 const updateHeader = () => {
   header.classList.toggle("is-scrolled", window.scrollY > 18);
 };
@@ -39,7 +60,9 @@ revealItems.forEach((item, index) => {
 const setTheme = (theme) => {
   const nextTheme = themeNames[theme] ? theme : "glass";
   document.body.dataset.theme = nextTheme;
-  localStorage.setItem("shaxing-site:theme", nextTheme);
+  try {
+    localStorage.setItem(SITE_THEME_KEY, nextTheme);
+  } catch (_) {}
 
   themeButtons.forEach((button) => {
     const isActive = button.dataset.themePick === nextTheme;
@@ -52,7 +75,12 @@ themeButtons.forEach((button) => {
   button.addEventListener("click", () => setTheme(button.dataset.themePick));
 });
 
-setTheme(localStorage.getItem("shaxing-site:theme") || "glass");
+normalizeSavedTheme();
+try {
+  setTheme(localStorage.getItem(SITE_THEME_KEY) || "glass");
+} catch (_) {
+  setTheme("glass");
+}
 
 const weatherTypes = ["cloud", "clear", "rain", "thunder", "fog"];
 let weatherIndex = 0;

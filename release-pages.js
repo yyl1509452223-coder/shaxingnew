@@ -171,6 +171,7 @@
       localStorage.setItem(SITE_THEME_KEY, DEFAULT_THEME);
     }
     localStorage.removeItem(EXTENDED_THEME_KEY);
+    localStorage.removeItem("shaxing-site:default-glass-reset-v7");
   } catch (_) {}
 
   buttons().forEach((button) => {
