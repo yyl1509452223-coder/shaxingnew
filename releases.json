@@ -1,13 +1,33 @@
 {
   "product": "Shaxing",
   "displayName": "鲨醒",
-  "latest": "1.2.11",
+  "latest": "1.4.0",
+  "nextDevelopmentVersion": "1.5.0",
   "items": [
+    {
+      "version": "1.4.0",
+      "tag": "v1.4.0",
+      "date": "2026-07-04",
+      "status": "latest",
+      "title": "v1.4.0 单机工具与修改器下载增强",
+      "downloadUrl": "https://github.com/yyl1509452223-coder/shaxingnew/releases/download/v1.4.0/Shaxing-Portable-v1.4.0.zip",
+      "fileName": "Shaxing-Portable-v1.4.0.zip",
+      "sha256": "b987caacec880640f2302dc76a3a17bf14da82963ca1078cad1af7d71ba3d4e2",
+      "sizeText": "104.9 MB",
+      "releaseNotesUrl": "./release-notes-v1.4.0.html",
+      "highlights": [
+        "单机工具新增修改器搜索与下载。",
+        "下载过程支持百分比、暂停/继续、取消和完成后打开。",
+        "下载历史可打开文件/所在文件夹/来源页，并自动标记失效文件。",
+        "修复 FLiNG 下载文件类型识别，EXE 不再误存成 ZIP。",
+        "优化快捷键、更新模块、标题不可选中和赛博朋克悬停文字。"
+      ]
+    },
     {
       "version": "1.2.11",
       "tag": "v1.2.11",
       "date": "2026-06-10",
-      "status": "latest",
+      "status": "history",
       "title": "v1.2.11 整合 v1.2 大版本更新",
       "downloadUrl": "https://github.com/yyl1509452223-coder/shaxingnew/releases/download/v1.2.11/Shaxing-Portable-v1.2.11.zip",
       "fileName": "Shaxing-Portable-v1.2.11.zip",

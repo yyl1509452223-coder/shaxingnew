@@ -9,7 +9,7 @@
       content="鲨醒是一个 memo-first 的桌面备忘录工具。快速记录、轻量提醒、天气陪伴，让想法和待办不再散落。"
     />
     <link rel="stylesheet" href="./styles.css" onerror="this.onerror=null;this.href='https://yyl1509452223-coder.github.io/shaxingnew/styles.css';" />
-    <link rel="stylesheet" href="./release-pages.css?v=1.2.11-default-glass-v7" />
+    <link rel="stylesheet" href="./release-pages.css?v=1.4.0" />
     <style id="shaxing-release-pages-inline-fallback">
 /* Shaxing release pages v1.2.11-default-glass-v7: real pixel handheld theme + compact history */
 /* 鲨醒版本页增量样式
@@ -1649,13 +1649,13 @@ body[data-theme="pixel"] .version-card.patch-version {
         <a href="#pomodoro">番茄钟</a>
         <a href="#themes">主题</a>
         <a href="#download">下载</a>
-        <a href="./release-notes-v1.2.11.html">更新内容</a>
+        <a href="./release-notes-v1.4.0.html">更新内容</a>
         <a href="./versions.html">历史版本</a>
       </nav>
 
       <a
         class="nav-download"
-        href="https://github.com/yyl1509452223-coder/shaxingnew/releases/download/v1.2.11/Shaxing-Portable-v1.2.11.zip"
+        href="https://github.com/yyl1509452223-coder/shaxingnew/releases/download/v1.4.0/Shaxing-Portable-v1.4.0.zip"
         data-download-link
       >下载鲨醒</a>
     </header>
@@ -1673,9 +1673,9 @@ body[data-theme="pixel"] .version-card.patch-version {
           <div class="hero-actions reveal">
             <a
               class="button primary"
-              href="https://github.com/yyl1509452223-coder/shaxingnew/releases/download/v1.2.11/Shaxing-Portable-v1.2.11.zip"
+              href="https://github.com/yyl1509452223-coder/shaxingnew/releases/download/v1.4.0/Shaxing-Portable-v1.4.0.zip"
               data-download-link
-            >下载鲨醒 V1.2.11</a>
+            >下载鲨醒 V1.4.0</a>
             <a class="button secondary" href="#features">查看功能</a>
             <a class="button secondary" href="#pomodoro">试试番茄钟</a>
           </div>
@@ -1906,78 +1906,35 @@ body[data-theme="pixel"] .version-card.patch-version {
       <section class="download-section" id="download">
         <div class="download-inner reveal">
           <p class="section-kicker">Download</p>
-          <h2>鲨醒 V1.2.11 已发布</h2>
+          <h2>鲨醒 V1.4.0 已发布</h2>
           <p>
-            v1.2.11 是当前推荐下载的 v1.2 系列整合修复版，完整包含 v1.2 大更新内容：待办、备忘录、提醒、番茄钟、细长窗口和主题皮肤都做了一轮体验升级，并保留 v1.1 的在线更新能力。
+            v1.4.0 是当前推荐下载版本，重点新增单机工具的修改器搜索与下载能力，并完善下载进度、暂停继续、取消、历史记录、文件失效检测和真实文件类型识别。
           </p>
 
-          <div class="release-panel" aria-label="鲨醒 V1.2.11 更新公告">
-            <div>
-              <span>01 待办增强</span>
-              <strong>新增每日提醒、每周固定提醒，待办提醒入口更统一。</strong>
-            </div>
-            <div>
-              <span>02 备忘录优化</span>
-              <strong>支持大标题、最后编辑时间、搜索、标签筛选和置顶。</strong>
-            </div>
-            <div>
-              <span>03 番茄钟</span>
-              <strong>新增专注卡片，支持开始、暂停、结束和重置。</strong>
-            </div>
-            <div>
-              <span>04 细长窗口</span>
-              <strong>补齐待办、备忘录、提醒和设置，并修复列表横向排列问题。</strong>
-            </div>
-            <div>
-              <span>05 像素皮肤</span>
-              <strong>新增像素掌机风格，并优化头像、按钮、卡片和底部标签。</strong>
-            </div>
-            <div>
-              <span>06 吸附优化</span>
-              <strong>侧边悬浮吸附标签支持拖动，并可自动适配屏幕边缘。</strong>
-            </div>
-            <div>
-              <span>07 分类修复</span>
-              <strong>修复细长窗口分类按钮悬停后显示不完整的问题。</strong>
-            </div>
-            <div>
-              <span>08 在线升级</span>
-              <strong>继续使用 release.json 检查更新，支持下载、校验并安装新版。</strong>
-            </div>
+          <div class="release-panel" aria-label="鲨醒 V1.4.0 更新公告">
+            <div><span>01 单机工具</span><strong>接入 Game Cheats Manager 公共修改器库，支持按游戏名搜索。</strong></div>
+            <div><span>02 FLiNG 下载</span><strong>支持来源解析与直链下载，减少手动跳转。</strong></div>
+            <div><span>03 下载进度</span><strong>下载按钮实时显示百分比，并支持暂停、继续和取消。</strong></div>
+            <div><span>04 下载完成</span><strong>完成后可直接打开文件，历史记录可打开文件、文件夹和来源页。</strong></div>
+            <div><span>05 失效检测</span><strong>历史记录实时检测文件是否存在，不存在会显示已失效并可删除。</strong></div>
+            <div><span>06 搜索优化</span><strong>默认保持空白输入，减少无关搜索结果。</strong></div>
+            <div><span>07 类型识别</span><strong>修复 EXE 被误保存成 ZIP 的问题，下载后更容易直接打开使用。</strong></div>
+            <div><span>08 视觉细节</span><strong>优化快捷键收纳、更新排序、标题不可选中和赛博朋克悬停文字。</strong></div>
           </div>
 
           <div class="download-actions">
-            <a
-              class="button primary"
-              href="https://github.com/yyl1509452223-coder/shaxingnew/releases/download/v1.2.11/Shaxing-Portable-v1.2.11.zip"
-              aria-label="下载鲨醒 V1.2.11 最新版"
-              data-download-link
-            >下载 V1.2.11</a>
-            <a class="button secondary" href="./release-notes-v1.2.11.html" aria-label="查看鲨醒 V1.2.11 更新内容">查看更新内容</a>
+            <a class="button primary" href="https://github.com/yyl1509452223-coder/shaxingnew/releases/download/v1.4.0/Shaxing-Portable-v1.4.0.zip" aria-label="下载鲨醒 V1.4.0 最新版" data-download-link>下载 V1.4.0</a>
+            <a class="button secondary" href="./release-notes-v1.4.0.html" aria-label="查看鲨醒 V1.4.0 更新内容">查看更新内容</a>
             <a class="button secondary" href="./versions.html" aria-label="查看鲨醒历史版本">历史版本</a>
           </div>
 
           <div class="release-panel" aria-label="安装流程和版本信息">
-            <div>
-              <span>当前版本</span>
-              <strong>1.2.11 stable</strong>
-            </div>
-            <div>
-              <span>适用系统</span>
-              <strong>Windows 10 / Windows 11，便携 ZIP 包。</strong>
-            </div>
-            <div>
-              <span>安装方式</span>
-              <strong>下载便携包后，解压整个文件夹，再打开 Shaxing.exe。</strong>
-            </div>
-            <div>
-              <span>文件大小</span>
-              <strong>104.8 MB</strong>
-            </div>
-            <div>
-              <span>文件校验</span>
-              <strong>SHA256: 10ac127276c0f00f708d2308df3acf19b90209583402bfb3227af4ce4e87eb2c</strong>
-            </div>
+            <div><span>当前版本</span><strong>1.4.0 stable</strong></div>
+            <div><span>适用系统</span><strong>Windows 10 / Windows 11，便携 ZIP 包。</strong></div>
+            <div><span>安装方式</span><strong>下载便携包后，解压整个文件夹，再打开 Shaxing.exe。</strong></div>
+            <div><span>文件大小</span><strong>104.9 MB</strong></div>
+            <div><span>文件校验</span><strong>SHA256: b987caacec880640f2302dc76a3a17bf14da82963ca1078cad1af7d71ba3d4e2</strong></div>
+            <div><span>下一版本</span><strong>后续更新内容归入 v1.5.0。</strong></div>
           </div>
 
           <div class="release-link-row">
@@ -1994,6 +1951,6 @@ body[data-theme="pixel"] .version-card.patch-version {
     </footer>
 
     <script src="./script.js" onerror="const s=document.createElement('script');s.src='https://yyl1509452223-coder.github.io/shaxingnew/script.js';document.body.appendChild(s);"></script>
-    <script src="./release-pages.js?v=1.2.11-default-glass-v7"></script>
+    <script src="./release-pages.js?v=1.4.0"></script>
   </body>
 </html>

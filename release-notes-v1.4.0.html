@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>鲨醒 v1.4.0 更新公告</title>
+    <meta name="description" content="鲨醒 v1.4.0 更新公告：单机工具、修改器搜索下载、进度暂停继续、历史记录和文件类型识别优化。" />
+    <link rel="stylesheet" href="./styles.css?v=1.4.0" />
+    <link rel="stylesheet" href="./release-pages.css?v=1.4.0" />
+  </head>
+  <body data-theme="glass">
+    <header class="site-header" data-header>
+      <a class="brand" href="./index.html#top" aria-label="鲨醒首页"><span class="brand-mark">鲨</span><span>鲨醒</span></a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="./index.html#features">功能</a>
+        <a href="./index.html#download">下载</a>
+        <a href="./release-notes-v1.4.0.html" aria-current="page">更新内容</a>
+        <a href="./versions.html">历史版本</a>
+      </nav>
+      <a class="nav-download" href="https://github.com/yyl1509452223-coder/shaxingnew/releases/download/v1.4.0/Shaxing-Portable-v1.4.0.zip" data-download-link>下载 V1.4.0</a>
+    </header>
+
+    <main class="release-page" id="top">
+      <section class="release-hero">
+        <p class="eyebrow reveal">Release notes</p>
+        <h1 class="reveal">鲨醒 v1.4.0 已发布</h1>
+        <p class="release-lead reveal">这次主要把「单机工具」做成可用的修改器搜索与下载入口，同时补齐下载进度、暂停继续、取消、历史记录和文件失效检测。</p>
+        <div class="download-actions reveal">
+          <a class="button primary" href="https://github.com/yyl1509452223-coder/shaxingnew/releases/download/v1.4.0/Shaxing-Portable-v1.4.0.zip" data-download-link>下载 v1.4.0</a>
+          <a class="button secondary" href="./release.json">查看自动更新配置</a>
+          <a class="button secondary" href="./versions.html">历史版本</a>
+        </div>
+      </section>
+
+      <section class="section-narrow version-history-section">
+        <article class="version-card major-version reveal">
+          <div class="version-head">
+            <div>
+              <p class="section-kicker">v1.4.0</p>
+              <h2>单机工具与修改器下载增强</h2>
+            </div>
+            <span class="version-badge">当前推荐</span>
+          </div>
+          <p>这一版重点解决“能搜到、能下载、下载后能直接用”的问题，并把下载历史做得更接近真实文件管理。</p>
+          <ul>
+            <li>新增「单机工具」：接入 Game Cheats Manager 公共修改器库，支持按游戏名搜索修改器。</li>
+            <li>支持 FLiNG 修改器来源解析与直链下载，减少跳转和手动查找。</li>
+            <li>下载按钮实时显示百分比进度，支持暂停、继续、取消。</li>
+            <li>下载完成后可直接打开文件；历史记录支持打开文件、打开所在文件夹和打开来源页。</li>
+            <li>下载历史会实时检测本地文件是否存在，失效记录显示“已失效”并提供删除按钮。</li>
+            <li>优化搜索相关性，减少无关结果；默认搜索页保持空白，只保留“输入游戏名”。</li>
+            <li>修复 FLiNG 文件真实类型识别：优先读取 Content-Disposition 文件名和魔术字节，避免 EXE 被误保存为 ZIP。</li>
+            <li>优化快捷键设置区收纳、未填色按钮样式、检查更新模块排序和标题不可选中。</li>
+            <li>修复赛博朋克模式下“修改ID”和“选择头像”悬停预览文字看不清的问题。</li>
+          </ul>
+        </article>
+
+        <article class="version-card patch-version reveal">
+          <div class="version-head">
+            <div>
+              <p class="section-kicker">Package</p>
+              <h2>下载包信息</h2>
+            </div>
+            <span class="version-badge small">Windows x64</span>
+          </div>
+          <ul>
+            <li>文件名：Shaxing-Portable-v1.4.0.zip</li>
+            <li>文件大小：104.9 MB</li>
+            <li>SHA256：b987caacec880640f2302dc76a3a17bf14da82963ca1078cad1af7d71ba3d4e2</li>
+            <li>安装方式：下载 ZIP 后解压整个文件夹，再打开 Shaxing.exe。</li>
+            <li>下一轮开发版本：v1.5.0。</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>鲨醒</span>
+      <p>轻盈、漂亮、低打扰的桌面备忘录。by 应用程序的七彩鲨鱼</p>
+    </footer>
+    <script src="./script.js" onerror="const s=document.createElement('script');s.src='https://yyl1509452223-coder.github.io/shaxingnew/script.js';document.body.appendChild(s);"></script>
+    <script src="./release-pages.js?v=1.4.0"></script>
+  </body>
+</html>
