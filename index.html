@@ -9,7 +9,7 @@
       content="鲨醒是一个 memo-first 的桌面备忘录工具。快速记录、轻量提醒、天气陪伴，让想法和待办不再散落。"
     />
     <link rel="stylesheet" href="./styles.css" onerror="this.onerror=null;this.href='https://yyl1509452223-coder.github.io/shaxingnew/styles.css';" />
-    <link rel="stylesheet" href="./release-pages.css?v=1.4.0-premium-4" />
+    <link rel="stylesheet" href="./release-pages.css?v=1.4.0-v140-final-v140-final" />
     <style id="shaxing-release-pages-inline-fallback">
 /* Shaxing release pages v1.2.11-default-glass-v7: real pixel handheld theme + compact history */
 /* 鲨醒版本页增量样式
@@ -1729,6 +1729,50 @@ body[data-theme="pixel"] .product-stage img {
   box-shadow: 0 34px 92px rgba(55, 103, 130, 0.16) !important;
 }
 
+
+
+/* v1.4.0 hero highlight */
+.hero-version-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 26px auto 0;
+  padding: 8px;
+  border: 1px solid rgba(118, 156, 184, 0.22);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 18px 46px rgba(55, 103, 130, 0.10);
+  backdrop-filter: blur(18px);
+}
+.hero-version-pill span,
+.hero-version-pill b {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+.hero-version-pill span {
+  background: linear-gradient(135deg, #73c9e7, #3d8ba7);
+  color: #fff;
+  box-shadow: 0 10px 22px rgba(61, 139, 167, 0.24);
+}
+.hero-version-pill b {
+  background: rgba(246, 252, 255, 0.82);
+  color: var(--accent-strong, #3d8ba7);
+  border: 1px solid rgba(118, 156, 184, 0.18);
+}
+@media (max-width: 640px) {
+  .hero-version-pill { border-radius: 28px; }
+  .hero-version-pill span,
+  .hero-version-pill b { width: 100%; justify-content: center; }
+}
+
 </style>
       <!-- v1.2.11-pixel-v6-app-like -->
   </head>
@@ -1758,12 +1802,15 @@ body[data-theme="pixel"] .product-stage img {
     <main id="top">
       <section class="hero">
         <div class="hero-inner">
-          <p class="eyebrow reveal">memo-first desktop app</p>
-          <h1 class="hero-title reveal">鲨醒</h1>
-          <p class="hero-line reveal">把要做的事情，轻轻列出来。</p>
+          <p class="eyebrow reveal">Shaxing V1.4.0 · 当前推荐版本</p>
+          <h1 class="hero-title reveal">鲨醒 1.4.0</h1>
+          <p class="hero-line reveal">单机工具、番茄钟和在线更新，都在这一版。</p>
           <p class="hero-copy reveal">
-            一个 memo-first 的桌面备忘录工具。快速记录、轻量提醒、天气陪伴，让想法和待办不再散落。
+            V1.4.0 重点升级修改器搜索与下载、下载历史、进度控制、番茄钟展示和更新体验；保持轻盈、干净、低打扰。
           </p>
+          <div class="hero-version-pill reveal" aria-label="鲨醒 V1.4.0 版本重点">
+            <span>V1.4.0</span><b>单机工具升级</b><b>番茄钟优化</b><b>在线更新</b>
+          </div>
 
           <div class="hero-actions reveal">
             <a
@@ -1778,7 +1825,7 @@ body[data-theme="pixel"] .product-stage img {
 
         <div class="product-stage reveal" aria-label="鲨醒产品界面预览">
           <img
-            src="./assets/shaxing-product-v1.4.0.png?v=home-premium-4"
+            src="./assets/shaxing-product-v1.4.0.png?v=home-v140-final"
             alt="鲨醒 v1.4.0 新版界面展示，包含待办、番茄钟、单机工具、下载进度和更新备用下载入口"
           />
         </div>
@@ -2017,7 +2064,7 @@ body[data-theme="pixel"] .product-stage img {
       <p>轻盈、漂亮、低打扰的桌面备忘录。by 应用程序的七彩鲨鱼</p>
     </footer>
 
-    <script src="./script.js?v=1.4.0-pixel-off-4" onerror="const s=document.createElement('script');s.src='https://yyl1509452223-coder.github.io/shaxingnew/script.js?v=1.4.0-pixel-off-4';document.body.appendChild(s);"></script>
-    <script src="./release-pages.js?v=1.4.0-pixel-off-4"></script>
+    <script src="./script.js?v=1.4.0-v140-final" onerror="const s=document.createElement('script');s.src='https://yyl1509452223-coder.github.io/shaxingnew/script.js?v=1.4.0-v140-final';document.body.appendChild(s);"></script>
+    <script src="./release-pages.js?v=1.4.0-v140-final-v140-final"></script>
   </body>
 </html>
