@@ -4,7 +4,7 @@
   "channel": "stable",
   "version": "1.4.5",
   "tag": "v1.4.5",
-  "releaseName": "鲨醒 v1.4.5 (UI polish and game daily manager fixes)",
+  "releaseName": "鲨醒 v1.4.5 更新公告",
   "releaseDate": "2026-07-06",
   "platform": "windows-x64",
   "system": "Windows 10 / Windows 11",
@@ -16,22 +16,35 @@
   "sizeBytes": 104915764,
   "sizeText": "104.9 MB",
   "mandatory": false,
-  "summary": "Shaxing v1.4.5 focuses on UI consistency and game daily management: a separate game daily manager window, fixed traffic-dot controls, solid rounded panels, custom confirmation dialogs, improved Pomodoro visuals, focus-app whitelist behavior, water reminder polish, cyber theme readability, and shortcut editing.",
+  "summary": "鲨醒 v1.4.5 主要新增独立的每日游戏管理窗口、专注应用白名单、快捷键编辑入口和番茄钟悬停展开体验；同时修复每日游戏窗口控制、番茄钟视觉、喝水弹窗、赛博朋克皮肤以及多处乱码、边框、阴影问题。",
   "notes": [
-    "Game Daily Manager now opens as an independent window instead of an embedded panel.",
-    "Removed the extra outer frame and kept a solid rounded content panel for the manager window.",
-    "Fixed the red close dot, blue minimize dot, and manager list scrolling behavior.",
-    "Changed the Game Dailies title to a cleaner daily-game reminder.",
-    "Replaced native system confirm dialogs with Shaxing-styled rounded confirmation dialogs.",
-    "Improved Pomodoro icons, collapsed/hover animation, paused green-tomato state, and cyber theme display.",
-    "Focus app selection now uses the current running-app list with up to 7 whitelisted apps.",
-    "Non-whitelisted apps are covered by a blur mask during focus mode.",
-    "Water reminder popup now removes extra shadow/avatar blank area and centers the message.",
-    "Added shortcut editing entry and improved cyber theme contrast/readability.",
-    "Fixed multiple garbled labels, unclear button states, icon offsets, extra borders, and inconsistent shadows."
+    "1. 主要新增：每日游戏管理改为独立窗口，从主界面的“管理列表”打开，像单独工具一样管理游戏清单；专注应用支持从当前正在运行的程序列表中选择，最多添加 7 个白名单应用；专注倒计时期间，未加入白名单的应用会自动覆盖不可点击、可缩小的模糊蒙版；设置页新增快捷键编辑入口，后续可以集中查看和调整快捷键；番茄钟新增初始完整展示、3 秒后收起、鼠标悬停展开的交互；收起后仍保留时间。",
+    "2. 修复优化：修复每日游戏独立窗口的红色关闭点、蓝色最小化点无响应问题，并恢复下拉菜单可用性；修复每日游戏弹窗多余外框、透明感过强、滚动和布局不统一的问题，标题统一为“每日游戏，别漏日活”；修复番茄钟按钮看不清、图标错位、整体过大、阴影和多余内框问题；暂停时切换为青番茄状态；修复喝水提醒弹窗的阴影、头像空白框和深色确认按钮，提示内容改为居中并统一为预览填色；修复赛博朋克皮肤中文字对比度不足、番茄钟显示异常，以及多个问号乱码、状态不明显、圆角蒙版变方块等细节。"
   ],
   "releaseNotesUrl": "https://yyl1509452223-coder.github.io/shaxingnew/release-notes-v1.4.5.html",
   "historyUrl": "https://yyl1509452223-coder.github.io/shaxingnew/versions.html",
   "majorReleaseNotesUrl": "https://yyl1509452223-coder.github.io/shaxingnew/release-notes-v1.4.5.html",
-  "nextDevelopmentVersion": "1.5.0"
+  "nextDevelopmentVersion": "1.5.0",
+  "noteSections": [
+    {
+      "title": "1. 主要新增",
+      "items": [
+        "每日游戏管理改为独立窗口，从主界面的“管理列表”打开，像单独工具一样管理游戏清单。",
+        "专注应用支持从当前正在运行的程序列表中选择，最多添加 7 个白名单应用。",
+        "专注倒计时期间，未加入白名单的应用会自动覆盖不可点击、可缩小的模糊蒙版。",
+        "设置页新增快捷键编辑入口，后续可以集中查看和调整快捷键。",
+        "番茄钟新增初始完整展示、3 秒后收起、鼠标悬停展开的交互；收起后仍保留时间。"
+      ]
+    },
+    {
+      "title": "2. 修复优化",
+      "items": [
+        "修复每日游戏独立窗口的红色关闭点、蓝色最小化点无响应问题，并恢复下拉菜单可用性。",
+        "修复每日游戏弹窗多余外框、透明感过强、滚动和布局不统一的问题，标题统一为“每日游戏，别漏日活”。",
+        "修复番茄钟按钮看不清、图标错位、整体过大、阴影和多余内框问题；暂停时切换为青番茄状态。",
+        "修复喝水提醒弹窗的阴影、头像空白框和深色确认按钮，提示内容改为居中并统一为预览填色。",
+        "修复赛博朋克皮肤中文字对比度不足、番茄钟显示异常，以及多个问号乱码、状态不明显、圆角蒙版变方块等细节。"
+      ]
+    }
+  ]
 }
