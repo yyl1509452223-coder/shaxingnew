@@ -9,18 +9,15 @@
       "tag": "v1.4.5",
       "date": "2026-07-06",
       "status": "latest",
-      "title": "v1.4.5 UI polish and game daily manager fixes",
+      "title": "v1.4.5 更新公告：每日游戏独立窗口与界面修复",
       "downloadUrl": "https://github.com/yyl1509452223-coder/shaxingnew/releases/download/v1.4.5/Shaxing-Portable-v1.4.5.zip",
       "fileName": "Shaxing-Portable-v1.4.5.zip",
       "sha256": "9ce0898159615a5dd383060fbe968b412fc73c20d4e20e77ca7048269c16a65f",
       "sizeText": "104.9 MB",
       "releaseNotesUrl": "./release-notes-v1.4.5.html",
       "highlights": [
-        "Game Daily Manager now opens as an independent window instead of an embedded panel.",
-        "Removed the extra outer frame and kept a solid rounded content panel for the manager window.",
-        "Fixed the red close dot, blue minimize dot, and manager list scrolling behavior.",
-        "Changed the Game Dailies title to a cleaner daily-game reminder.",
-        "Replaced native system confirm dialogs with Shaxing-styled rounded confirmation dialogs."
+        "主要新增：独立每日游戏管理窗口、专注应用白名单、快捷键编辑入口、番茄钟收起后保留时间并支持悬停展开。",
+        "修复优化：修复窗口关闭/最小化、下拉菜单、番茄钟视觉、喝水弹窗、赛博朋克皮肤、乱码、边框和阴影问题。"
       ]
     },
     {
