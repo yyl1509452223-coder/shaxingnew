@@ -1,14 +1,33 @@
 {
   "product": "Shaxing",
   "displayName": "鲨醒",
-  "latest": "1.4.0",
+  "latest": "1.4.5",
   "nextDevelopmentVersion": "1.5.0",
   "items": [
+    {
+      "version": "1.4.5",
+      "tag": "v1.4.5",
+      "date": "2026-07-06",
+      "status": "latest",
+      "title": "v1.4.5 UI polish and game daily manager fixes",
+      "downloadUrl": "https://github.com/yyl1509452223-coder/shaxingnew/releases/download/v1.4.5/Shaxing-Portable-v1.4.5.zip",
+      "fileName": "Shaxing-Portable-v1.4.5.zip",
+      "sha256": "9ce0898159615a5dd383060fbe968b412fc73c20d4e20e77ca7048269c16a65f",
+      "sizeText": "104.9 MB",
+      "releaseNotesUrl": "./release-notes-v1.4.5.html",
+      "highlights": [
+        "Game Daily Manager now opens as an independent window instead of an embedded panel.",
+        "Removed the extra outer frame and kept a solid rounded content panel for the manager window.",
+        "Fixed the red close dot, blue minimize dot, and manager list scrolling behavior.",
+        "Changed the Game Dailies title to a cleaner daily-game reminder.",
+        "Replaced native system confirm dialogs with Shaxing-styled rounded confirmation dialogs."
+      ]
+    },
     {
       "version": "1.4.0",
       "tag": "v1.4.0",
       "date": "2026-07-04",
-      "status": "latest",
+      "status": "history",
       "title": "v1.4.0 单机工具与修改器下载增强",
       "downloadUrl": "https://github.com/yyl1509452223-coder/shaxingnew/releases/download/v1.4.0/Shaxing-Portable-v1.4.0.zip",
       "fileName": "Shaxing-Portable-v1.4.0.zip",
